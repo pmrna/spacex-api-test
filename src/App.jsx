@@ -15,7 +15,6 @@ const App = () => {
   const [view, setView] = useState(null);
   const observer = useRef();
 
-  // Debounce search query
   useEffect(() => {
     const handler = setTimeout(() => setDebouncedQuery(searchQuery), 500);
     return () => clearTimeout(handler);
@@ -84,7 +83,7 @@ const App = () => {
         className="search"
       />
 
-      <div className="launch__wrapper fade-enter-active">
+      <div className="launch__wrapper">
         <div className="launch__list">
           {filteredLaunches.length > 0
             ? filteredLaunches.map((launch, index) => {
