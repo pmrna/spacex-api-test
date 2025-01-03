@@ -3,7 +3,7 @@ import "./App.css";
 import "./assets/scss/styles.scss";
 import Spinner from "./components/Spinner/Spinner";
 
-const ITEMS_PER_PAGE = 2;
+const ITEMS_PER_PAGE = 4;
 
 const App = () => {
   const [launches, setLaunches] = useState([]);
@@ -157,7 +157,7 @@ const App = () => {
               })
             : !isLoading && <p>No results found.</p>}
           {isLoading && <Spinner />}
-          {!hasMore && !isLoading && (
+          {!hasMore && !isLoading && filteredLaunches.length > 0 && (
             <div className="max-reached">End of list.</div>
           )}
         </div>
